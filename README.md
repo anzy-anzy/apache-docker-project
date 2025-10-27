@@ -11,7 +11,7 @@ Containerize an Apache webserver and deploy it using Docker.
 2. Copied a custom HTML homepage.
 3. Tested locally with port mapping.
 4. Pushed to Docker Hub:  
-   👉 [https://hub.docker.com/r/anslem2025/apache-webserver](https://hub.docker.com/r/anslem2025/apache-webserver)
+   👉 https://hub.docker.com/r/anslem2025/apache-webserver
 ## 🧩 Step-by-Step Plan 
 ### 🚀 Step 1 — Launch EC2 Instance
 Am using and ubuntu server which i will use session manager for this  work.
@@ -19,6 +19,13 @@ Am using and ubuntu server which i will use session manager for this  work.
 <img width="1920" height="932" alt="Screenshot (675)" src="https://github.com/user-attachments/assets/021f9e3c-dda8-49bc-a1b5-9b62db46510d" />
 
 ### 🐳 Step 2 — Install Docker
+```bash
+sudo apt update -y
+sudo apt install docker.io -y
+sudo systemctl enable --now docker
+sudo usermod -aG docker ubuntu
+```
+
 <img width="1920" height="926" alt="Screenshot (676)" src="https://github.com/user-attachments/assets/04420ced-9ebf-42d8-a4a7-bbf765bd4126" />
 
 ### 📁 Step 3 — Set up your project folder
@@ -81,14 +88,24 @@ https://hub.docker.com/r/anslem2025/apache-webserver
 docker pull yourusername/apache-webserver:latest
 docker run -d -p 8080:80 yourusername/apache-webserver:latest
 ```
+### pull and run a cluster member's image
+```bash
+docker pull nwudofidelis/fidelis-apache:v1.1
 
+docker run -d - 880:80 nwudofidelis/fidelis-apache:v1.1
+```
+- had two runing containers at the time  so i couldn't run his image after i pulled it so i had to stop the two running containers before runing his'
+ 
+<img width="1918" height="911" alt="Screenshot (688)" src="https://github.com/user-attachments/assets/7106a977-a7d3-46fd-8ae1-778f2abc3b53" />
+
+<img width="1920" height="892" alt="Screenshot (691)" src="https://github.com/user-attachments/assets/5a852136-e408-4242-944a-8e70d405387e" />
 
 ## 🧩 Conclusion
 
 This project demonstrated the complete process of containerizing an Apache webserver using Docker on an AWS EC2 instance.
 Starting from building a simple HTML webpage, we created a Dockerfile, built a lightweight image, and successfully deployed it as a running container accessible through a web browser.
 
-The custom image — now available publicly on Docker Hub (anslem2025/apache-webserver) — ensures that the application can be easily shared, pulled, and run on any environment without dependency issues.
+The custom image now available publicly on Docker Hub (anslem2025/apache-webserver)  ensures that the application can be easily shared, pulled, and run on any environment without dependency issues.
 
 This exercise clearly highlights the power of Docker in DevOps, showing how containerization improves:
 
@@ -100,7 +117,7 @@ Collaboration (others can pull and use the same image)
 
 Automation readiness (ready for CI/CD pipelines)
 
-By pushing the image to Docker Hub and testing it externally, the deployment lifecycle is complete — proving the practical application of containerization for real-world web applications.
+By pushing the image to Docker Hub and testing it externally, the deployment lifecycle is complete proving the practical application of containerization for real-world web applications.
 
 
 
