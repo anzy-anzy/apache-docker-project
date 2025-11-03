@@ -7,11 +7,11 @@
 Containerize an Apache webserver and deploy it using Docker.
 
 ### 🧱 Steps
-1. Built a Docker image using Apache HTTPD base.
+1. Built a Docker image using Apache HTTP base.
 2. Copied a custom HTML homepage.
 3. Tested locally with port mapping.
 4. Pushed to Docker Hub:  
-   👉 https://hub.docker.com/r/anslem2025/apache-webserver
+   👉 http://hub.docker.com/r/anslem2025/apache-webserver
 ## 🧩 Step-by-Step Plan 
 ### 🚀 Step 1 — Launch EC2 Instance
 Am using and ubuntu server which i will use session manager for this  work.
